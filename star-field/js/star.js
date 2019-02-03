@@ -26,7 +26,7 @@ function generateStars() {
   }
 }
 
-function onClick(event) {
+function onClick() {
   generateStars();
 }
 
