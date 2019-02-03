@@ -128,10 +128,8 @@ function init() {
   draw.canvas.addEventListener("dblclick", initDraw);
 
   draw.canvas.addEventListener("mousedown", onMousedown);
-
   draw.canvas.addEventListener("mouseup", onMouseup);
   draw.canvas.addEventListener("mouseleave", onMouseup);
-
   draw.canvas.addEventListener("mousemove", onMousemove);
 
   document.addEventListener('keydown', onKeyDown);
