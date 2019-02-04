@@ -1,6 +1,6 @@
 'use strict';
 
-const draw = {}
+const draw = {};
 
 function repaint () {
   draw.ctx.clearRect(0, 0, draw.canvas.width, draw.canvas.height);
@@ -19,14 +19,17 @@ function repaint () {
     draw.ctx.moveTo(curve[0][0], curve[0][1]);
 
     for (let index = 1; index < curve.length - 1; index++) {
-      draw.ctx.lineTo(curve[index + 1][0], curve[index + 1][1]);
+      let cpx = (curve[index][0] + curve[index + 1][0]) / 2;
+      let cpy = (curve[index][1] + curve[index + 1][1]) / 2;
+      draw.ctx.quadraticCurveTo(curve[index][0], curve[index][1], cpx, cpy);
+
       draw.ctx.stroke();
 
       draw.ctx.beginPath();
       draw.ctx.lineJoin = 'round';
       draw.ctx.lineCap = 'round';
       draw.ctx.lineWidth = curve[index + 1][3];
-      draw.ctx.moveTo(curve[index + 1][0], curve[index + 1][1]);
+      draw.ctx.moveTo(cpx, cpy);
       draw.ctx.strokeStyle = 'hsl(' + curve[index + 1][2] + ', 100%, 50%)';
     }
   });
