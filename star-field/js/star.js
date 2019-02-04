@@ -1,7 +1,7 @@
 'use strict';
 
-const colors = ["#ffffff", "#ffe9c4", "#d4fbff"];
 const PI = Math.PI;
+const colors = ["#ffffff", "#ffe9c4", "#d4fbff"];
 
 let canvas;
 let ctx;
